@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/ddttmlcvy/image/upload/v1723461585/architjain-favicon_zuo7xo.png"><title>Bash Shell Scripting Basics</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><style>@import url(https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap);body{font-family:'Victor Mono',monospace;background-color:#111;color:#e7e7e7;margin:20px;padding:20px;line-height:1.6}h1,h2{color:#c15f03}a{color:#e7e7e7;text-decoration:none}a:hover{text-decoration:underline}.resource-section{margin-bottom:30px}</style></head><body><div class="resource-section"><h2>Bash Shell Scripting Basics</h2><p>Bash shell scripting is a powerful way to automate tasks and manage system operations in Unix-like environments. Here are some key concepts and examples:</p><h3>1. Introduction to Bash</h3><p>Bash (Bourne Again Shell) is a command processor that typically runs in a text window where the user types commands that cause actions. It is widely used for scripting due to its rich feature set.</p><h3>2. Basic Syntax</h3><p>Bash scripts are plain text files containing a series of commands. Each command is executed sequentially. Scripts typically start with a shebang line:</p><pre><code>#!/bin/bash</code></pre><p>This line tells the system to use the Bash interpreter to run the script.</p><h3>3. Variables</h3><p>Variables in Bash are used to store data. They are created and used without specifying a type:</p><pre><code>#!/bin/bash
+    name="John Doe"
+    echo "Hello, $name"</code></pre><p>This script defines a variable<code>name</code>and uses it in an echo statement.</p><h3>4. Control Structures</h3><p>Bash supports various control structures for making decisions and loops:</p><ul><li><strong>If statements:</strong></li><pre><code>#!/bin/bash
+    if [ $name = "John Doe" ]; then
+        echo "Welcome, John!"
+    else
+        echo "You are not John."
+    fi</code></pre><li><strong>For loops:</strong></li><pre><code>#!/bin/bash
+    for i in {1..5}
+    do
+        echo "Number $i"
+    done</code></pre><li><strong>While loops:</strong></li><pre><code>#!/bin/bash
+    count=1
+    while [ $count -le 5 ]
+    do
+        echo "Count is $count"
+        ((count++))
+    done</code></pre></ul><h3>5. Functions</h3><p>Functions in Bash allow you to group commands for reuse:</p><pre><code>#!/bin/bash
+    function greet() {
+        echo "Hello, $1"
+    }
+
+    greet "Alice"</code></pre><p>This script defines a function<code>greet</code>that takes one argument and prints a greeting.</p><h3>6. File Operations</h3><p>Bash scripts can perform file operations such as reading and writing files:</p><pre><code>#!/bin/bash
+    echo "This is a test file." > testfile.txt
+    cat testfile.txt</code></pre><p>This script writes a string to a file and then displays its content.</p><h3>7. Error Handling</h3><p>Handling errors is crucial in scripting. You can use<code>set -e</code>to make the script exit on errors:</p><pre><code>#!/bin/bash
+    set -e
+
+    echo "This will run"
+    nonexistent_command
+    echo "This will not run"</code></pre><h3>8. Conclusion</h3><p>Bash scripting is an essential skill for system administrators and developers. By mastering it, you can automate repetitive tasks and improve your productivity.</p></div><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="architjain" data-color="#FFDD00" data-emoji="☕" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script><h2 style="padding-top:1rem">You are here for<span>...</span></h2><p>I think you are here to get to know me.</p><p>🌐 Connect with me across platforms.</p><p>🤝 Hit me up on these links, and let's turn ideas into action!</p><div class="button-container"><button type="button" class="btn btn-outline-light"><a href="https://socials.architjain.dev/" target="_blank" style="text-decoration:none;color:#fff">Linktree</a></button><button type="button" class="btn btn-outline-light"><a href="https://linkedin.architjain.dev/" target="_blank" style="text-decoration:none;color:#fff">LinkedIn</a></button><button type="button" class="btn btn-outline-light"><a href="https://github.architjain.dev/" target="_blank" style="text-decoration:none;color:#fff">GitHub</a></button><button type="button" class="btn btn-outline-light"><a href="https://x.architjain.dev/" target="_blank" style="text-decoration:none;color:#fff">X (Twitter)</a></button><button type="button" class="btn btn-outline-light"><a href="https://architjain.dev/" target="_blank" style="text-decoration:none;color:#fff">architjain.dev</a></button><button type="button" class="btn btn-outline-light"><a href="./chronicles.html" target="_blank" style="text-decoration:none;color:#fff">Chronicles</a></button><button type="button" class="btn btn-outline-light"><a href="mailto:512kb.club@architjain.dev" target="_blank" style="text-decoration:none;color:#fff">Mail Me</a></button></div><footer><br><p>Created by Archit Jain |<a href="../index.html">Back to Main Site</a></p></footer></body></html>

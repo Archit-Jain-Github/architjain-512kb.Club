@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon"
+        href="https://res.cloudinary.com/ddttmlcvy/image/upload/v1723461585/architjain-favicon_zuo7xo.png">
+    <title>C++ Programming Basics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+        body {
+            font-family: 'Victor Mono', monospace;
+            background-color: #111111;
+            color: #e7e7e7;
+            margin: 20px;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #c15f03;
+        }
+        a {
+            color: #e7e7e7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .resource-section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Basic C++ Programming Concepts</h2>
+    <p>C++ is an extension of the C programming language with additional features like object-oriented programming (OOP). Below are some fundamental C++ concepts and syntax:</p>
+
+    <div class="resource-section">
+        <h3>1. <code>#include</code></h3>
+        <p>The <code>#include</code> directive is used to include standard or user-defined libraries and header files in a C++ program.</p>
+        <pre><code>#include &lt;iostream&gt;    // Includes the Input-Output stream library
+#include &lt;string&gt;       // Includes the String library for string manipulations</code></pre>
+
+        <h3>2. <code>main</code></h3>
+        <p>The <code>main</code> function is the entry point of a C++ program. The execution starts from this function.</p>
+        <pre><code>int main() {
+    // Your code here
+    return 0;   // Returns 0 to indicate successful execution
+}</code></pre>
+
+        <h3>3. <code>cout</code> and <code>cin</code></h3>
+        <p>The <code>cout</code> object is used for outputting data to the console, while <code>cin</code> is used for inputting data from the console.</p>
+        <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;    // Prints "Hello, World!" followed by a newline
+    int number;
+    std::cin >> number;    // Takes an integer input from the user
+    return 0;
+}</code></pre>
+
+        <h3>4. <code>Variables</code></h3>
+        <p>Variables in C++ store data values and must be declared with a type. Here are some common types:</p>
+        <pre><code>int age = 25;           // Integer variable with value 25
+double height = 5.9;      // Double variable for floating-point numbers
+char grade = 'A';         // Character variable with value 'A'
+std::string name = "Alice"; // String variable to store text</code></pre>
+
+        <h3>5. <code>Control Structures</code></h3>
+        <p>C++ control structures manage the flow of the program. They include conditional statements and loops:</p>
+        <pre><code>if (age > 18) {
+    std::cout << "Adult" << std::endl;    // Executes if age is greater than 18
+} else {
+    std::cout << "Minor" << std::endl;    // Executes if age is 18 or less
+}
+
+for (int i = 0; i < 5; i++) {
+    std::cout << i << std::endl;    // Executes the block of code 5 times
+}
+
+while (height < 6.0) {
+    height += 0.1;    // Repeats the block of code while height is less than 6.0
+}</code></pre>
+
+        <h3>6. <code>Functions</code></h3>
+        <p>Functions in C++ are blocks of code designed to perform specific tasks. They help in code organization and reusability.</p>
+        <pre><code>int add(int a, int b) {
+    return a + b;    // Returns the sum of a and b
+}
+
+int result = add(5, 3);    // Calls the add function with arguments 5 and 3</code></pre>
+
+        <h3>7. <code>Classes and Objects</code></h3>
+        <p>C++ is an object-oriented language, meaning it supports classes and objects. Classes are user-defined data types that encapsulate data and functions.</p>
+        <pre><code>#include &lt;iostream&gt;
+
+class Person {
+public:
+    std::string name;
+    int age;
+
+    void introduce() {
+        std::cout << "My name is " << name << " and I am " << age << " years old." << std::endl;
+    }
+};
+
+int main() {
+    Person person1;
+    person1.name = "Alice";
+    person1.age = 30;
+    person1.introduce();    // Outputs: My name is Alice and I am 30 years old.
+    return 0;
+}</code></pre>
+
+        <h3>8. <code>Constructors and Destructors</code></h3>
+        <p>Constructors initialize objects when they are created, while destructors clean up when objects are destroyed.</p>
+        <pre><code>class Car {
+public:
+    std::string model;
+    Car(std::string m) : model(m) {   // Constructor
+        std::cout << "Car model " << model << " created." << std::endl;
+    }
+    ~Car() {    // Destructor
+        std::cout << "Car model " << model << " destroyed." << std::endl;
+    }
+};
+
+int main() {
+    Car car1("Toyota");    // Creates a Car object with model "Toyota"
+    return 0;
+}</code></pre>
+
+        <h3>9. <code>Inheritance</code></h3>
+        <p>Inheritance allows a class to inherit attributes and methods from another class, facilitating code reusability.</p>
+        <pre><code>class Animal {
+public:
+    void eat() {
+        std::cout << "Eating..." << std::endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        std::cout << "Woof!" << std::endl;
+    }
+};
+
+int main() {
+    Dog myDog;
+    myDog.eat();    // Inherited method
+    myDog.bark();   // Method specific to Dog class
+    return 0;
+}</code></pre>
+
+        <h3>10. <code>Polymorphism</code></h3>
+        <p>Polymorphism allows methods to do different things based on the object that is invoking them. It can be achieved using function overloading or function overriding.</p>
+        <pre><code>#include &lt;iostream&gt;
+
+class Base {
+public:
+    virtual void show() {    // Virtual function for dynamic binding
+        std::cout << "Base class show function" << std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {   // Overridden function
+        std::cout << "Derived class show function" << std::endl;
+    }
+};
+
+int main() {
+    Base* bptr;
+    Derived d;
+    bptr = &d;
+    bptr->show();    // Calls the Derived class version of show()
+    return 0;
+}</code></pre>
+
+        <h3>11. <code>Templates</code></h3>
+        <p>Templates enable generic programming by allowing functions and classes to operate with any data type.</p>
+        <pre><code>template &lt;typename T&gt;
+T max(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    std::cout << max(10, 5) << std::endl;       // Calls max with integers
+    std::cout << max(3.5, 2.5) << std::endl;    // Calls max with doubles
+    return 0;
+}</code></pre>
+
+        <h3>12. <code>Standard Template Library (STL)</code></h3>
+        <p>The STL provides various template classes and functions such as vectors, lists, and maps for efficient data manipulation.</p>
+        <pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5};
+    for (int num : numbers) {
+        std::cout << num << std::endl;    // Outputs each number in the vector
+    }
+    return 0;
+}</code></pre>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="architjain" data-color="#FFDD00" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+    <h2 style="padding-top: 1rem;">You are here for<span>...</span></h2>
+    <p>
+        I think you are here to get to know me.
+    </p>
+    <p> 🌐 Connect with me across platforms.
+    </p>
+    <p>🤝 Hit me up on these links, and let's turn ideas into action!</p>
+
+    <div class="button-container">
+        <button type="button" class="btn btn-outline-light"><a href="https://socials.architjain.dev/" target="_blank"
+                style="text-decoration: none; color: white;">Linktree</a></button>
+        <button type="button" class="btn btn-outline-light"><a href="https://linkedin.architjain.dev/" target="_blank"
+                style="text-decoration: none; color: white;">LinkedIn</a></button>
+        <button type="button" class="btn btn-outline-light"><a href="https://github.architjain.dev/" target="_blank"
+                style="text-decoration: none; color: white;">GitHub</a></button>
+        <button type="button" class="btn btn-outline-light"><a href="https://x.architjain.dev/" target="_blank"
+                style="text-decoration: none; color: white;">X (Twitter)</a></button>
+        <button type="button" class="btn btn-outline-light"><a href="https://architjain.dev/" target="_blank"
+                style="text-decoration: none; color: white;">architjain.dev</a></button>
+                <button type="button" class="btn btn-outline-light"><a href="./chronicles.html" target="_blank"
+                    style="text-decoration: none; color: white;">Chronicles</a></button>
+        <button type="button" class="btn btn-outline-light"><a href="mailto:512kb.club@architjain.dev" target="_blank"
+                style="text-decoration: none; color: white;">Mail Me</a></button>
+    </div>
+    <footer>
+        <br>
+        <p>Created by Archit Jain | <a href="../index.html">Back to Main Site</a></p>
+    </footer>
+</body>
+</html>
